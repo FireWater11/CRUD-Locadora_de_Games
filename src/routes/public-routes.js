@@ -1,9 +1,11 @@
 import express from 'express';
+import { cadastrar_usuario } from '../controller/public-controller.js';
+
 
 const public_routes = express.Router();
 
 public_routes.post('/register', (req, res) => {
-    console.log("funfou");
+    cadastrar_usuario(req, res);
 });
 
 
