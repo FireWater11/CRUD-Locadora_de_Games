@@ -1,0 +1,8 @@
+-- CreateTable
+CREATE TABLE "rentals" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "userId" INTEGER NOT NULL,
+    "gameId" INTEGER NOT NULL,
+    "rendedAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "returned" BOOLEAN NOT NULL DEFAULT false
+);

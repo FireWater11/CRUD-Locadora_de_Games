@@ -6,3 +6,25 @@ datasource db {
   provider = "sqlite"
   url      = "file:./db_games"
 }
+
+model user {
+  id Int @id @default(autoincrement())
+  username String @unique
+  password String
+  isAdmin Boolean @default(false)
+}
+
+model games {
+  id Int @id @default(autoincrement())
+  title String
+  plataform String
+  available Boolean @default(true)
+}
+
+model rentals {
+  id Int @id @default(autoincrement())
+  userId Int
+  gameId Int
+  rendedAt DateTime @default(now())
+  returned Boolean @default(false)
+}
